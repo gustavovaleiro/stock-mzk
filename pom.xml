@@ -22,7 +22,7 @@
     <vertx.version>3.8.5</vertx.version>
     <junit-jupiter.version>5.4.0</junit-jupiter.version>
 
-    <main.verticle>com.teste.mozaiko.starter.MainVerticle</main.verticle>
+    <main.verticle>com.teste.mozaiko.starter.verticle.ProdutoVerticle</main.verticle>
   </properties>
 
   <dependencyManagement>
@@ -64,6 +64,11 @@
       <version>${junit-jupiter.version}</version>
       <scope>test</scope>
     </dependency>
+	<dependency>
+		<groupId>org.slf4j</groupId>
+		<artifactId>slf4j-simple</artifactId>
+		<version>1.7.21</version>
+	</dependency>
   </dependencies>
 
   <build>
@@ -92,7 +97,10 @@
                 </transformer>
                 <transformer
                   implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+                  
                   <resource>META-INF/services/io.vertx.core.spi.VerticleFactory</resource>
+                   <resource>META-INF/services/io.vertx.core.spi.launcher.CommandFactory</resource>
+                
                 </transformer>
               </transformers>
               <artifactSet>
