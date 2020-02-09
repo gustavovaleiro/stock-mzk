@@ -27,7 +27,7 @@ public class ProdutoVerticle extends AbstractVerticle {
 		router.get("/produtos").handler(this::getAll);
 		router.delete("/produtos/:id").handler(this::delete);
 
-		vertx.createHttpServer().requestHandler(router).listen(config().getInteger("http.port", 9000),
+		vertx.createHttpServer().requestHandler(router).listen(config().getInteger("http.port", 8080),
 				result -> {
 					if (result.succeeded()) {
 						startPromise.complete();
