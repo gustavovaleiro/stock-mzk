@@ -2,9 +2,9 @@ package com.teste.mozaiko.starter.service;
 
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 
-import com.google.common.base.Optional;
 import com.teste.mozaiko.starter.model.Produto;
 
 public class EstoqueService {
